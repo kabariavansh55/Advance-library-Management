@@ -118,30 +118,53 @@ def show_about_window():
         ("Created by:", "Vansh Kabaria"),
         ("Creation Date:", "July 2024"),
         ("Technologies Used:", "Python, Tkinter, MySQL, ReportLab"),
-        ("Brief Summary:", "The Library Management System (LMS) is a robust application designed to modernize and streamline library operations. It utilizes Python for backend processes, Tkinter for the user interface, and MySQL for database management. The LMS integrates essential features for book management and issuance, while also incorporating advanced functionalities to enhance user experience and operational efficiency. Below is a detailed overview of the system’s features, including search, sort, and scroll functionalities.\n\n"
-              "### Traditional Features\n"
-              "The LMS provides essential functionalities for library management, including:\n\n"
-              "- **Book Management:** Librarians can add, update, delete, and view books. Each book is assigned a unique serial number and includes information such as title, author, subject, and quantity. The 'View Books' section displays all books and supports search and sort functionalities.\n\n"
-              "- **Book Issuance and Return:** The system tracks book issuance and returns, recording details like issue date, student ID, and book information. The 'Issued Book History' section logs all transactions, including timestamps, return dates, and fines.\n\n"
-              "- **Login System:** A secure login system is in place for admins and librarians, using password masking and allowing submission via the Enter key.\n\n"
-              "### Search Functionality\n"
-              "The search functionality is an integral part of the LMS, providing users with an efficient way to locate specific books. In the 'View Books' section, users can enter keywords related to book attributes, such as title, author, or subject. The search algorithm filters the displayed records to match the query, making it easy for librarians and users to find particular books without sifting through the entire inventory manually. This feature enhances the system’s usability by providing quick and accurate search results, thus improving overall efficiency in managing and retrieving book information.\n\n"
-              "### Sort Functionality\n"
-              "The sort functionality allows users to organize book records according to various criteria. In the 'View Books' section, users can choose to sort books by attributes such as title, author, or subject. This is achieved through a dropdown menu or similar interface element that enables users to select their preferred sorting criterion. Sorting helps users quickly arrange and view books in a specific order, making it easier to analyze data, manage inventory, and perform administrative tasks. This feature is particularly useful for librarians who need to access records in a structured format.\n\n"
-              "### Scroll Functionality\n"
-              "The scroll functionality is implemented to enhance the user experience when dealing with large volumes of data. In sections where many records are displayed, such as 'View Books' and 'Issued Book History,' vertical and horizontal scrollbars are included. These scrollbars allow users to navigate through extensive lists of books or transaction records seamlessly. The vertical scrollbar facilitates scrolling through lengthy book lists, while the horizontal scrollbar helps navigate wide tables with numerous columns. By incorporating scrollbars, the LMS ensures that users can access all necessary information without being overwhelmed by large datasets. This feature contributes to a cleaner, more organized interface and improves overall usability.\n\n"
-              "### Extra Features Beyond Traditional Capabilities\n"
-              "In addition to the core functionalities, the LMS includes several advanced features:\n\n"
-              "- **QR Code Integration:** Each book is assigned a unique QR code for efficient tracking and management.\n\n"
-              "- **Dynamic User Interface (UI) Elements:** Interactive buttons with 3D effects and hover-resize functionality enhance visual appeal and usability.\n\n"
-              "- **Detailed Issued Book History:** Comprehensive records of issued books, including timestamps and fines.\n\n"
-              "- **Modular Design and Robust Error Handling:** Modular design for easy maintenance and comprehensive error handling for system stability.\n\n"
-              "- **Enhanced Data Visualization:** Potential for integrating graphical representations of library data.\n\n"
-              "- **User-Friendly Notifications and Alerts:** Customizable notifications for key actions and alerts for overdue books.\n\n"
-              "- **Potential PDF Export Facility:** Future capability to generate and download PDFs for easy sharing and review of library data.\n\n"
-              "### Summary\n"
-              "The Library Management System is a comprehensive tool designed to address modern library needs effectively. By combining traditional features with advanced functionalities such as search, sort, and scroll, along with dynamic UI elements and detailed historical records, the LMS offers a powerful solution for managing library operations. The system’s design ensures ease of use, efficiency in book management, and adaptability to future enhancements, making it a valuable asset for contemporary library environments.")
-]
+        ("Brief Summary:",  "The Advanced Library Management System (ALMS) is a comprehensive application designed to modernize and streamline library operations. "
+        "Developed using Python, Tkinter, and MySQL, ALMS offers a robust solution for managing various library activities efficiently. The system integrates "
+        "essential features for book management and issuance while incorporating advanced functionalities to enhance user experience and operational efficiency. "
+        "This detailed overview highlights the core features and additional functionalities of the system.\n\n"
+
+        "### Traditional Features\n"
+        "ALMS provides a set of core functionalities that are essential for effective library management:\n\n"
+        "- **Book Management:** Librarians have the capability to add, update, delete, and view books within the system. Each book is assigned a unique serial number and "
+        "includes detailed information such as title, author, subject, and quantity. The 'View Books' section presents all available books and supports both search and sort functionalities, "
+        "allowing for efficient organization and retrieval of book records.\n\n"
+        "- **Book Issuance and Return:** The system tracks the issuance and return of books, capturing important details such as the issue date, student ID, and book information. "
+        "The 'Issued Book History' section maintains a comprehensive log of all transactions, including timestamps, return dates, and fines, ensuring accurate tracking of book movements.\n\n"
+        "- **Login System:** A secure login mechanism is implemented for both admins and librarians. This feature includes password masking and supports submission via the Enter key, "
+        "enhancing the security and usability of the login process.\n\n"
+
+        "### Search Functionality\n"
+        "The search functionality is a crucial aspect of ALMS, providing users with an efficient method for locating specific books. In the 'View Books' section, users can enter "
+        "keywords related to book attributes such as title, author, or subject. The search algorithm filters the displayed records based on the query, enabling librarians and users to "
+        "quickly find particular books without manually browsing through the entire inventory. This feature significantly improves the system's usability by delivering quick and accurate search results, "
+        "thereby enhancing overall efficiency in managing and retrieving book information.\n\n"
+
+        "### Sort Functionality\n"
+        "The sort functionality allows users to organize book records according to various criteria. In the 'View Books' section, users can sort books by attributes such as title, author, or subject. "
+        "This is facilitated through a dropdown menu or similar interface element, allowing users to select their preferred sorting criterion. Sorting helps users arrange books in a specific order, "
+        "making data analysis, inventory management, and administrative tasks more manageable. This feature is particularly valuable for librarians who need to access records in a structured and organized format.\n\n"
+
+        "### Scroll Functionality\n"
+        "The scroll functionality is implemented to enhance the user experience when dealing with extensive datasets. Sections such as 'View Books' and 'Issued Book History' include vertical and horizontal scrollbars. "
+        "These scrollbars enable users to navigate through long lists of books or transaction records seamlessly. The vertical scrollbar allows for scrolling through lengthy book lists, while the horizontal scrollbar assists in navigating wide tables with numerous columns. "
+        "By incorporating scrollbars, ALMS ensures that users can access all necessary information without being overwhelmed by large volumes of data, contributing to a cleaner and more organized interface.\n\n"
+
+        "### Extra Features Beyond Traditional Capabilities\n"
+        "In addition to the core functionalities, ALMS incorporates several advanced features to enhance its capabilities:\n\n"
+        "- **QR Code Integration:** Each book is assigned a unique QR code for efficient tracking and management. This feature simplifies book identification and facilitates quick access to book information through QR code scanning.\n\n"
+        "- **Dynamic User Interface (UI) Elements:** The system includes interactive buttons with 3D effects and hover-resize functionality, enhancing the visual appeal and usability of the interface.\n\n"
+        "- **Detailed Issued Book History:** ALMS maintains comprehensive records of issued books, including timestamps and fines, providing a detailed history of book transactions for accurate tracking and reporting.\n\n"
+        "- **Modular Design and Robust Error Handling:** The system features a modular design for easy maintenance and robust error handling mechanisms to ensure system stability and reliability.\n\n"
+        "- **Enhanced Data Visualization:** There is potential for integrating graphical representations of library data, offering visual insights into various aspects of library operations.\n\n"
+        "- **User-Friendly Notifications and Alerts:** The system includes customizable notifications for key actions and alerts for overdue books, improving user engagement and operational oversight.\n\n"
+        "- **Potential PDF Export Facility:** Future enhancements may include the capability to generate and download PDFs for easy sharing and review of library data, facilitating improved data management.\n\n"
+        "- **Google Search Button:** Integration of a Google search button allows users to perform web searches directly from the system interface, enhancing accessibility to external resources.\n\n"
+        "- **WhatsApp Integration:** A WhatsApp button enables direct access to WhatsApp for sending PDFs of view book details or issued book history, facilitating easy communication and document sharing.\n\n"
+
+        "### Summary\n"
+        "The Advanced Library Management System is a comprehensive tool designed to address contemporary library needs effectively. By combining traditional features with advanced functionalities such as search, sort, and scroll, "
+        "along with dynamic UI elements and detailed historical records, ALMS offers a powerful solution for managing library operations. The system's design ensures ease of use, efficiency in book management, and adaptability to future enhancements, making it a valuable asset for modern library environments."
+)]
     for row_index, (field, detail) in enumerate(data, start=3):
         field_label = tk.Label(content_frame, text=field, font=text_font, anchor="w", relief="ridge", width=20)
         detail_label = tk.Label(content_frame, text=detail, font=text_font, anchor="w", wraplength=450, relief="ridge", width=50)
