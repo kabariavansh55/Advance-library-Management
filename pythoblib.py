@@ -210,29 +210,15 @@ def libr():
     }
 
     def on_enter(event):
-        if event.widget == logout_button:
-            event.widget.config(bg='#c0392b', font=("Helvetica", 12, "bold"))
-        elif event.widget == about_button:
-            event.widget.config(bg='#27ae60', font=("Helvetica", 12, "bold"))
-        elif event.widget == google_button:
-            event.widget.config(bg='#357AE8', font=("Helvetica", 12, "bold"))
-        else:
-            event.widget.config(bg='#f1c40f', font=("Helvetica", 12, "bold"))
+        event.widget.config(bg=event.widget['activebackground'], font=("Helvetica", 12, "bold"))
         event.widget.config(width=24, height=2)
 
     def on_leave(event):
-        if event.widget == logout_button:
-            event.widget.config(bg='#e74c3c', font=("Helvetica", 12, "bold"))
-        elif event.widget == about_button:
-            event.widget.config(bg='#2ecc71', font=("Helvetica", 12, "bold"))
-        elif event.widget == google_button:
-            event.widget.config(bg='#4285F4', font=("Helvetica", 12, "bold"))
-        else:
-            event.widget.config(bg='lightblue', font=("Helvetica", 12, "bold"))
+        event.widget.config(bg=event.widget['bg'], font=("Helvetica", 12, "bold"))
         event.widget.config(width=20, height=2)
 
     # Create a frame for the button table
-    button_frame = tk.Frame(win, bg='orange', borderwidth=4, relief='solid')
+    button_frame = tk.Frame(win, bg='green', borderwidth=4, relief='solid')
     button_frame.grid(row=1, column=0, padx=20, pady=20, sticky="nsew")
 
     # Define buttons and their commands
@@ -245,34 +231,29 @@ def libr():
         ('Delete Book', deletebook),
         ('Update Book', updatebook),
         ('Total Books', show_total_books),
-        ('Issued Books History', issued_books_history)
+        ('Issued Books History', issued_books_history),
+        ('LogOut', logout),  # Adding LogOut button to the grid
+        ('Search Google', open_google),  # Adding Search button to the grid
+        ('About', show_about_window)  # Adding About button to the grid
     ]
+
+    # Assign styles to special buttons
+    special_button_styles = {
+        'LogOut': logout_button_style,
+        'Search Google': google_button_style,
+        'About': about_button_style
+    }
 
     # Create buttons and place them in the button frame
     num_cols = 3
     for i, (text, command) in enumerate(buttons):
         row = i // num_cols
         col = i % num_cols
-        button = tk.Button(button_frame, text=text, command=command, **button_style)
+        button_style_to_use = special_button_styles.get(text, button_style)
+        button = tk.Button(button_frame, text=text, command=command, **button_style_to_use)
         button.bind("<Enter>", on_enter)
         button.bind("<Leave>", on_leave)
         button.grid(row=row, column=col, padx=10, pady=10, sticky="nsew")
-
-    # Create logout, about, and google buttons
-    logout_button = tk.Button(win, text='LogOut', command=logout, **logout_button_style)
-    logout_button.bind("<Enter>", on_enter)
-    logout_button.bind("<Leave>", on_leave)
-    logout_button.grid(row=2, column=0, padx=10, pady=(20, 10), sticky="nsew")
-
-    about_button = tk.Button(win, text='About', command=show_about_window, **about_button_style)
-    about_button.bind("<Enter>", on_enter)
-    about_button.bind("<Leave>", on_leave)
-    about_button.grid(row=3, column=0, padx=10, pady=(20, 10), sticky="nsew")
-
-    google_button = tk.Button(win, text='Search for Google', command=open_google, **google_button_style)
-    google_button.bind("<Enter>", on_enter)
-    google_button.bind("<Leave>", on_leave)
-    google_button.grid(row=4, column=0, padx=10, pady=(20, 10), sticky="nsew")
 
     # Create an animated label at the top of the window
     animated_label = tk.Label(win, text="Welcome to Advance Library Management system created by Vansh Kabaria", font=("Helvetica", 16, "bold"), fg="blue", bg='lightgray')
@@ -297,6 +278,7 @@ def libr():
 
 def open_google():
     webbrowser.open('http://www.google.com')
+
 def save_to_pdf(data, filename):
     # Define page size
     pagesize = A4
@@ -1098,6 +1080,10 @@ def viewbook():
         if filename:
             save_to_pdf(data, filename)
 
+    def open_whatsapp():
+        url = "https://web.whatsapp.com/"  # URL for WhatsApp Web
+        webbrowser.open(url)
+
     win = tk.Tk()
     win.title('View Books')
     win.geometry("1200x400+270+180")
@@ -1158,7 +1144,7 @@ def viewbook():
     h_scrollbar.pack(side='bottom', fill='x')
 
     # Add the search button
-    search_button = tk.Button(search_frame, text="Search", command=perform_search_with_option)
+    search_button = tk.Button(search_frame, text="Search",bg='green',fg='white',command=perform_search_with_option)
     search_button.pack(side=tk.LEFT, padx=10, pady=10)
     
     # Bind hover effects
@@ -1173,8 +1159,16 @@ def viewbook():
     download_button.bind("<Enter>", on_enter)
     download_button.bind("<Leave>", on_leave)
     
+    # Add the WhatsApp button
+    whatsapp_button = tk.Button(search_frame, text="WhatsApp", command=open_whatsapp, bg='green', fg='white')
+    whatsapp_button.pack(side=tk.LEFT, padx=10, pady=10)
+    
+    # Bind hover effects to the WhatsApp button
+    whatsapp_button.bind("<Enter>", on_enter)
+    whatsapp_button.bind("<Leave>", on_leave)
+    
     # Add the Close button
-    close_button = tk.Button(win, text="Close", command=lambda: win.destroy(), bg='green', fg='white')
+    close_button = tk.Button(win, text="Close", command=lambda: win.destroy(), bg='red', fg='white')
     close_button.pack(side='bottom', pady=10)
     
     # Bind hover effects to the close button
@@ -1183,7 +1177,6 @@ def viewbook():
     
     win.mainloop()
     closedb()
-
 
 def perform_search_issued_books(search_term, treeview):
     connectdb()
