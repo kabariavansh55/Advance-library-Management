@@ -414,7 +414,7 @@ def issued_books_history():
     try:
         connectdb()
         q = '''
-            SELECT ibh.stdid, ibh.serial_number, b.subject, ibh.book_title, ibh.issue_date, ibh.exp_date, ibh.return_timestamp, ibh.return_date, ibh.fine
+            SELECT ibh.stdid, ibh.serial_number, b.subject, b.title, ibh.issue_date, ibh.exp_date, ibh.return_timestamp, ibh.return_date, ibh.fine
             FROM issued_book_history ibh
             JOIN book b ON ibh.serial_number = b.serial
         '''
@@ -489,6 +489,7 @@ def issued_books_history():
         messagebox.showerror("Error", f"An error occurred: {str(e)}")
     finally:
         closedb()
+
 def close_window(win):
     win.destroy()
 
